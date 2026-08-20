@@ -465,7 +465,7 @@
             font-weight: 400;
         }
 
-        /* ===== БЛОКИ АДРЕСОВ (ИКОНКА СВЕРХУ, ТЕКСТ ПО ЦЕНТРУ, ФОТО И КАРТА В РЯД) ===== */
+        /* ----- АДРЕСНЫЕ БЛОКИ (НОВАЯ СТРУКТУРА) ----- */
         .address-block {
             margin: 28px 0;
             padding: 20px 0;
@@ -487,6 +487,7 @@
             margin-bottom: 18px;
         }
 
+        /* Иконка сверху по центру */
         .address-icon {
             width: 36px;
             height: 36px;
@@ -505,10 +506,9 @@
             stroke: var(--gold-dark);
             fill: none;
             stroke-width: 1.5;
-            stroke-linecap: round;
-            stroke-linejoin: round;
         }
 
+        /* Текст по центру */
         .address-info {
             width: 100%;
             display: flex;
@@ -540,8 +540,10 @@
             line-height: 1.4;
         }
 
+        /* Фото и карта в одну строку */
         .address-media {
             display: flex;
+            flex-direction: row;
             gap: 8px;
             margin-top: 6px;
             width: 100%;
@@ -565,11 +567,6 @@
             height: 100%;
             object-fit: contain;
             display: block;
-            transition: transform 0.3s ease;
-        }
-
-        .address-image img:hover {
-            transform: scale(1.05);
         }
 
         .address-map {
@@ -587,6 +584,7 @@
             pointer-events: auto;
         }
 
+        /* Кнопка */
         .address-actions {
             margin-top: 8px;
             display: flex;
@@ -712,13 +710,8 @@
         }
 
         @keyframes separatorPulse {
-            0%,
-            100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.3;
-            }
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
         }
 
         .rsvp-section {
@@ -999,7 +992,7 @@
             letter-spacing: 8px;
         }
 
-        /* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
+        /* ----- МОБИЛЬНАЯ АДАПТАЦИЯ (сохраняем структуру) ----- */
         @media (max-width: 480px) {
             .names {
                 font-size: 32px;
@@ -1024,11 +1017,11 @@
                 width: 14px;
                 height: 14px;
             }
+            /* Фото и карта в одну строку, но меньшей высоты */
             .address-image,
             .address-map {
                 height: 90px;
             }
-            /* Фото и карта остаются в ряд */
             .address-media {
                 flex-direction: row;
                 gap: 6px;
@@ -1534,6 +1527,5 @@
             }, 1500);
         });
     </script>
-
 </body>
 </html>
