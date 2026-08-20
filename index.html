@@ -994,7 +994,7 @@
             letter-spacing: 8px;
         }
 
-        /* ===== МОБИЛЬНАЯ ВЕРСИЯ (фото и карта в ряд) ===== */
+        /* ===== МОБИЛЬНАЯ ВЕРСИЯ (иконка слева от текста) ===== */
         @media (max-width: 480px) {
             .names {
                 font-size: 32px;
@@ -1012,24 +1012,26 @@
                 letter-spacing: 4px;
             }
             .address-item {
-                flex-direction: column;
-                gap: 10px;
+                flex-direction: row;
+                gap: 12px;
+                align-items: flex-start;
             }
             .address-icon {
                 width: 30px;
                 height: 30px;
+                margin-top: 4px;
             }
             .address-icon svg {
                 width: 14px;
                 height: 14px;
             }
+            .address-media {
+                flex-direction: column;
+                gap: 8px;
+            }
             .address-image,
             .address-map {
                 height: 90px;
-            }
-            .address-media {
-                flex-direction: row; /* фото и карта в ряд */
-                gap: 8px;
             }
             .countdown-value {
                 font-size: 28px;
