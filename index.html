@@ -548,7 +548,7 @@
             min-width: 0;
             border-radius: 6px;
             overflow: hidden;
-            height: 80px;
+            height: 140px;
             background: #f0ece4;
             display: flex;
             align-items: center;
@@ -558,7 +558,7 @@
         .address-image img {
             width: 100%;
             height: 100%;
-            object-fit: contain; /* картинка видна целиком, без обрезки */
+            object-fit: contain;
             display: block;
             transition: transform 0.3s ease;
         }
@@ -572,7 +572,7 @@
             min-width: 0;
             border-radius: 6px;
             overflow: hidden;
-            height: 80px;
+            height: 140px;
         }
 
         .address-map iframe {
@@ -994,6 +994,7 @@
             letter-spacing: 8px;
         }
 
+        /* ===== МОБИЛЬНАЯ ВЕРСИЯ (фото и карта в ряд) ===== */
         @media (max-width: 480px) {
             .names {
                 font-size: 32px;
@@ -1024,15 +1025,11 @@
             }
             .address-image,
             .address-map {
-                height: 70px;
+                height: 90px;
             }
             .address-media {
-                flex-direction: column;
+                flex-direction: row; /* фото и карта в ряд */
                 gap: 8px;
-            }
-            .address-image,
-            .address-map {
-                height: 80px;
             }
             .countdown-value {
                 font-size: 28px;
