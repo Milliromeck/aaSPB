@@ -465,6 +465,7 @@
             font-weight: 400;
         }
 
+        /* ===== БЛОКИ АДРЕСОВ (ИКОНКА СВЕРХУ, ТЕКСТ ПО ЦЕНТРУ, ФОТО И КАРТА В РЯД) ===== */
         .address-block {
             margin: 28px 0;
             padding: 20px 0;
@@ -474,9 +475,10 @@
 
         .address-item {
             display: flex;
-            gap: 16px;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
             padding: 12px 0;
-            align-items: flex-start;
         }
 
         .address-item:not(:last-child) {
@@ -486,7 +488,6 @@
         }
 
         .address-icon {
-            flex-shrink: 0;
             width: 36px;
             height: 36px;
             border-radius: 50%;
@@ -494,7 +495,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-top: 2px;
+            margin: 0 auto 8px;
+            flex-shrink: 0;
         }
 
         .address-icon svg {
@@ -508,9 +510,10 @@
         }
 
         .address-info {
-            flex: 1;
+            width: 100%;
             display: flex;
             flex-direction: column;
+            align-items: center;
         }
 
         .address-text {
@@ -541,6 +544,7 @@
             display: flex;
             gap: 8px;
             margin-top: 6px;
+            width: 100%;
             align-items: stretch;
         }
 
@@ -587,6 +591,7 @@
             margin-top: 8px;
             display: flex;
             flex-direction: column;
+            align-items: center;
             gap: 6px;
         }
 
@@ -603,7 +608,6 @@
             transition: background 0.3s ease;
             border: none;
             cursor: pointer;
-            align-self: flex-start;
         }
 
         .address-btn:hover {
@@ -995,7 +999,7 @@
             letter-spacing: 8px;
         }
 
-        /* ===== МОБИЛЬНАЯ ВЕРСИЯ (иконка слева) ===== */
+        /* ===== МОБИЛЬНАЯ ВЕРСИЯ ===== */
         @media (max-width: 480px) {
             .names {
                 font-size: 32px;
@@ -1012,27 +1016,22 @@
                 font-size: 28px;
                 letter-spacing: 4px;
             }
-            .address-item {
-                flex-direction: row;
-                gap: 12px;
-                align-items: flex-start;
-            }
             .address-icon {
                 width: 30px;
                 height: 30px;
-                margin-top: 4px;
             }
             .address-icon svg {
                 width: 14px;
                 height: 14px;
             }
-            .address-media {
-                flex-direction: column;
-                gap: 8px;
-            }
             .address-image,
             .address-map {
                 height: 90px;
+            }
+            /* Фото и карта остаются в ряд */
+            .address-media {
+                flex-direction: row;
+                gap: 6px;
             }
             .countdown-value {
                 font-size: 28px;
